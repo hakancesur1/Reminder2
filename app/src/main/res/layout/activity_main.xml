@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#949FDF"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/addNew_Button"
+        android:layout_width="405dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/add_new"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reminder_TextView" />
+
+    <TextView
+        android:id="@+id/reminder_TextView"
+        android:layout_width="405dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="50dp"
+        android:background="#00D55858"
+        android:backgroundTint="#00DABFBF"
+        android:clickable="false"
+        android:gravity="center"
+        android:text="@string/reminder"
+        android:textAlignment="gravity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

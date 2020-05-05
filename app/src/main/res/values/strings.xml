@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Reminder</string>
+    <string name="reminder">REMINDER</string>
+    <string name="add_new">Add New Event</string>
+
+    <string name="title">Title</string>
+    <string name="details">Details</string>
+    <string name="done">Done</string>
+    <string name="save">Save</string>
+    <string name="back">Back</string>
+
+</resources>
