@@ -4,32 +4,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#949FDF"
+    android:background="#050505"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/addNew_Button"
-        android:layout_width="405dp"
-        android:layout_height="41dp"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="50dp"
+        android:background="#3F51B5"
         android:text="@string/add_new"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/reminder_TextView" />
-
-    <TextView
-        android:id="@+id/reminder_TextView"
-        android:layout_width="405dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="50dp"
-        android:background="#00D55858"
-        android:backgroundTint="#00DABFBF"
-        android:clickable="false"
-        android:gravity="center"
-        android:text="@string/reminder"
-        android:textAlignment="gravity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="201dp"
+        android:layout_height="198dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:background="#3F51B5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/todayRadioButton"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="250dp"
+            android:background="#FFC107"
+            android:text="@string/today"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+        <RadioButton
+            android:id="@+id/weekRadioButton"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="250dp"
+            android:background="#FFC107"
+            android:text="@string/week"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/todayRadioButton" />
+
+        <RadioButton
+            android:id="@+id/yearRadioButton"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="250dp"
+            android:background="#FFC107"
+            android:text="@string/month"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/weekRadioButton" />
+
+        <RadioButton
+            android:id="@+id/radioButton5"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="250dp"
+            android:background="#FFC107"
+            android:text="@string/year"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/yearRadioButton"
+            tools:layout_editor_absoluteX="46dp"
+            tools:layout_editor_absoluteY="261dp" />
+
+    </RadioGroup>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycleView"
+        android:layout_width="341dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginEnd="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <Button
+        android:id="@+id/settingsButton"
+        android:layout_width="115dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="30dp"
+        android:background="#3F51B5"
+        android:text="@string/settings"
+        app:layout_constraintStart_toEndOf="@+id/radioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/addNew_Button" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

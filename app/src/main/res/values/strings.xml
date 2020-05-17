@@ -1,12 +1,46 @@
 <resources>
     <string name="app_name">Reminder</string>
-    <string name="reminder">REMINDER</string>
     <string name="add_new">Add New Event</string>
+    <string name="settings">Settings</string>
+    <string name="today">Today</string>
+    <string name="week">Week</string>
+    <string name="month">Month</string>
+    <string name="year">Year</string>
+    <string name="date">Date</string>
+    <string name="share">Share</string>
+
+
+
+    <string name="rTitle">Title</string>
+    <string name="rDate">Date</string>
+
 
     <string name="title">Title</string>
     <string name="details">Details</string>
+    <string name="category">Category</string>
     <string name="done">Done</string>
     <string name="save">Save</string>
     <string name="back">Back</string>
+    <string name="date_time">Date And Time</string>
+
+    <string name="notification">Notification</string>
+    <string name="vibration">Vibration</string>
+    <string name="timer">Timer</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
 
 </resources>
