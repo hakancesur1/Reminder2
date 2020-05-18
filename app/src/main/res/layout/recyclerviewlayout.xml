@@ -11,56 +11,66 @@
     app:cardCornerRadius="5dp">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/parent"
+        android:layout_width="407dp"
+        android:layout_height="130dp"
         android:background="@android:color/white"
         android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/noteImage"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
             android:src="@drawable/ic_event_note_black_24dp" />
 
         <LinearLayout
-            android:layout_width="293dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/rTitleTextView"
-                android:layout_width="237dp"
-                android:layout_height="31dp"
-                android:layout_marginLeft="3dp"
-                android:layout_marginTop="9dp"
-                android:text="@string/rTitle"
-                android:textSize="15dp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/rDateTextView"
-                android:layout_width="237dp"
-                android:layout_height="27dp"
-                android:layout_marginLeft="3dp"
-                android:layout_marginTop="3dp"
-                android:text="@string/rDate"
-                android:textSize="12dp"
-                android:textStyle="italic" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="55dp"
-            android:layout_height="80dp"
             android:layout_gravity="center_vertical"
-            android:orientation="vertical">
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/rTitleTextView"
+                    android:layout_width="237dp"
+                    android:layout_height="31dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="9dp"
+                    android:text="@string/rTitle"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/rDetailTextView"
+                    android:layout_width="237dp"
+                    android:layout_height="31dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="9dp"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/rDateTextView"
+                    android:layout_width="237dp"
+                    android:layout_height="27dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/rDate"
+                    android:textSize="12dp"
+                    android:textStyle="italic" />
+
+
+            </LinearLayout>
 
             <ImageView
                 android:id="@+id/deleteImage"
-                android:layout_width="67dp"
-                android:layout_height="90dp"
+                android:layout_width="43dp"
+                android:layout_height="match_parent"
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="15dp"
                 android:src="@drawable/ic_delete_black_24dp" />

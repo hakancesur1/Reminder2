@@ -1,6 +1,7 @@
 package com.example.reminder2;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class Notes {
@@ -69,12 +70,47 @@ public class Notes {
     }
 
     public static String convertGregorianToDate(Calendar time){
-        SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy HH:MM");
+        SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy HH:mm");
         fmt.setCalendar(time);
 
         String dateFormatted = fmt.format(time.getTime());
 
         return dateFormatted;
+    }
+
+    public static ArrayList<Notes> getRemindersWithType(ArrayList<Notes> reminderNotes, int type){
+        ArrayList<Notes> reminderNotesNew = new ArrayList<>();
+        Calendar today = Calendar.getInstance();
+        double dayConverter = 24 * 60 * 60 * 1000;
+        double diff;
+
+        switch (type){
+            case 1 : //today's reminders
+                for(Notes reminderNote : reminderNotes){
+                    diff = (reminderNote.getTime().getTimeInMillis() - today.getTimeInMillis()) / dayConverter;
+                    if(diff >= 0 && diff < 1){
+                        reminderNotesNew.add(reminderNote);
+                    }
+                }
+                return reminderNotesNew;
+            case 2: //week's reminders
+                for(Notes reminderNote : reminderNotes){
+                    diff = (reminderNote.getTime().getTimeInMillis() - today.getTimeInMillis()) / dayConverter;
+                    if(diff >= 0 && diff < 7){
+                        reminderNotesNew.add(reminderNote);
+                    }
+                }
+                return reminderNotesNew;
+            case 3: //month's reminders
+                for(Notes reminderNote : reminderNotes){
+                    diff = (reminderNote.getTime().getTimeInMillis() - today.getTimeInMillis()) / dayConverter;
+                    if(diff >= 0 && diff < 30){
+                        reminderNotesNew.add(reminderNote);
+                    }
+                }
+                return reminderNotesNew;
+        }
+        return reminderNotes;
     }
 
 }

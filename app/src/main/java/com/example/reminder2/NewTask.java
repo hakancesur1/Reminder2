@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -20,10 +21,12 @@ import java.util.Calendar;
 
 public class NewTask extends AppCompatActivity {
 
-    EditText title,detail,category;
+    EditText title,detail;
     TextView dateTime;
     CheckBox isDone;
     Button date;
+    RadioButton birthDay,activity,notice,meeting;
+    String category;
 
     Db db;
 
@@ -32,12 +35,16 @@ public class NewTask extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_task);
 
+
         title=(EditText)findViewById(R.id.titleEditText);
         detail=(EditText)findViewById(R.id.detailEditText);
-        category=(EditText)findViewById((R.id.categoryEditText)) ;
         isDone=(CheckBox)findViewById(R.id.doneCheckBox);
         date=(Button)findViewById(R.id.dateButton);
         dateTime=(TextView)findViewById(R.id.dateTimeTextView);
+        birthDay=(RadioButton)findViewById(R.id.birthDayRadioButton);
+        activity=(RadioButton)findViewById(R.id.activityRadioButton);
+        notice=(RadioButton)findViewById(R.id.noticeRadioButton);
+        meeting=(RadioButton)findViewById(R.id.meetingRadioButton);
 
 
 
@@ -54,7 +61,7 @@ public class NewTask extends AppCompatActivity {
             }
         });
 
-        final Calendar newCalender = Calendar.getInstance();
+        final Calendar newCalendar = Calendar.getInstance();
         date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,7 +88,7 @@ public class NewTask extends AppCompatActivity {
                         time.show();
 
                     }
-                },newCalender.get(Calendar.YEAR),newCalender.get(Calendar.MONTH),newCalender.get(Calendar.DAY_OF_MONTH));
+                },newCalendar.get(Calendar.YEAR),newCalendar.get(Calendar.MONTH),newCalendar.get(Calendar.DAY_OF_MONTH));
 
                 dialog.getDatePicker().setMinDate(System.currentTimeMillis());
                 dialog.show();
@@ -96,14 +103,25 @@ public class NewTask extends AppCompatActivity {
                 Notes note = new Notes();
                 Db db = new Db(NewTask.this);
 
+                if(birthDay.isChecked())
+                    category="Birthday";
+                else if(activity.isChecked())
+                    category="Activity";
+                else if(notice.isChecked())
+                    category="Notice";
+                else if (meeting.isChecked())
+                    category="Meeting";
+                else
+                    category="Other";
+
                 Calendar calendar = Calendar.getInstance();
                 calendar.setTimeInMillis(dateTime.getDrawingTime());
 
-                note.setTitle(title.toString());
-                note.setDetail(detail.toString());
-                note.setCategory(category.toString());
+                note.setTitle(title.getText().toString());
+                note.setDetail(detail.getText().toString());
+                note.setCategory(category);
                 note.setIsDone(isDone.isChecked());
-                note.setTime(calendar);
+                note.setTime(newCalendar);
 
                 db.insertNotes(note);
 

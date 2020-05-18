@@ -5,15 +5,12 @@
     <string name="today">Today</string>
     <string name="week">Week</string>
     <string name="month">Month</string>
-    <string name="year">Year</string>
+    <string name="all">All</string>
     <string name="date">Date</string>
     <string name="share">Share</string>
 
-
-
     <string name="rTitle">Title</string>
     <string name="rDate">Date</string>
-
 
     <string name="title">Title</string>
     <string name="details">Details</string>
@@ -22,6 +19,10 @@
     <string name="save">Save</string>
     <string name="back">Back</string>
     <string name="date_time">Date And Time</string>
+    <string name="birthday">Birthday</string>
+    <string name="activity">Activity</string>
+    <string name="notice">Notice</string>
+    <string name="meeting">Meeting</string>
 
     <string name="notification">Notification</string>
     <string name="vibration">Vibration</string>

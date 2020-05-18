@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import java.text.ParseException;
@@ -15,7 +16,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ArrayList<Notes> notes = new ArrayList<>();
+    ArrayList<Notes> notes;
+    ArrayList<Notes> notesShow ;
 
     Db db;
 
@@ -24,10 +26,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        final Button addNewButton = (Button)findViewById(R.id.addNew_Button);
+        final Button settingsButton=(Button)findViewById(R.id.settingsButton);
+        final RadioButton today=(RadioButton)findViewById(R.id.todayRadioButton);
+        final RadioButton week=(RadioButton)findViewById(R.id.weekRadioButton);
+        final RadioButton month=(RadioButton)findViewById(R.id.monthRadioButton);
+        final RadioButton all=(RadioButton)findViewById(R.id.allRadioButton);
+
+        notes = new ArrayList<>();
+        notesShow = new ArrayList<>();
 
         db = new Db(MainActivity.this);
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycleView);
+        //final NoteAdapter noteAdapter;
 
         try {
             notes = db.getAllNotes();
@@ -36,15 +48,23 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        NoteAdapter noteAdapter = new NoteAdapter(this, notes);
+        today.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //notesShow=Notes.getRemindersWithType(notes,1);
+                Toast.makeText(MainActivity.this,"Tık",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+       // Notes.getRemindersWithType(notes,);
+
+        NoteAdapter noteAdapter = new NoteAdapter(this, notesShow);
         recyclerView.setAdapter(noteAdapter);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
-
-        final Button addNewButton = (Button)findViewById(R.id.addNew_Button);
-        final Button settingsButton=(Button)findViewById(R.id.settingsButton);
 
         addNewButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#949FDF"
+    android:background="#141E57"
     tools:context=".NewTask">
 
     <EditText
@@ -12,11 +12,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="75dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="@string/title"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,7 +26,7 @@
         android:layout_width="227dp"
         android:layout_height="87dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="75dp"
         android:ems="10"
         android:gravity="start|top"
@@ -37,41 +37,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleEditText" />
 
-    <EditText
-        android:id="@+id/categoryEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginEnd="75dp"
-        android:ems="10"
-        android:hint="@string/category"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailEditText" />
-
     <CheckBox
         android:id="@+id/doneCheckBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="35dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="55dp"
         android:layout_marginEnd="28dp"
         android:checked="false"
         android:hint="@string/category"
         android:text="@string/done"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/shareButton"
-        app:layout_constraintTop_toBottomOf="@+id/categoryEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
 
     <Button
         android:id="@+id/saveButton"
         android:layout_width="448dp"
         android:layout_height="49dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="30dp"
         android:text="@string/save"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dateTimeTextView" />
 
@@ -80,8 +68,11 @@
         android:layout_width="448dp"
         android:layout_height="49dp"
         android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
         android:text="@string/back"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/saveButton" />
 
@@ -90,33 +81,82 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="225dp"
         android:text="@string/date"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.445"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/categoryEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
 
     <Button
         android:id="@+id/shareButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="50dp"
         android:text="@string/share"
         app:layout_constraintStart_toEndOf="@+id/dateButton"
-        app:layout_constraintTop_toBottomOf="@+id/categoryEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
 
     <TextView
         android:id="@+id/dateTimeTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
+        android:layout_width="109dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="15dp"
         android:clickable="false"
         android:text="@string/date_time"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dateButton" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toTopOf="@+id/dateButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailEditText">
+
+        <RadioButton
+            android:id="@+id/birthDayRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/birthday"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="247dp" />
+
+        <RadioButton
+            android:id="@+id/activityRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/activity"
+            tools:layout_editor_absoluteX="50dp"
+            tools:layout_editor_absoluteY="292dp" />
+
+        <RadioButton
+            android:id="@+id/noticeRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/notice"
+            tools:layout_editor_absoluteX="222dp"
+            tools:layout_editor_absoluteY="247dp" />
+
+        <RadioButton
+            android:id="@+id/meetingRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/meeting"
+            tools:layout_editor_absoluteX="221dp"
+            tools:layout_editor_absoluteY="298dp" />
+    </RadioGroup>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

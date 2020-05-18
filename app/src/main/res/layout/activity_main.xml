@@ -4,16 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#050505"
+    android:background="#141E57"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/addNew_Button"
         android:layout_width="115dp"
         android:layout_height="60dp"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="50dp"
-        android:background="#3F51B5"
+        android:background="#FFC107"
         android:text="@string/add_new"
         app:layout_constraintStart_toEndOf="@+id/radioGroup"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,9 +22,9 @@
         android:id="@+id/radioGroup"
         android:layout_width="201dp"
         android:layout_height="198dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="30dp"
-        android:background="#3F51B5"
+        android:background="#141E57"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -35,7 +35,8 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="250dp"
-            android:background="#FFC107"
+            android:background="#FF9800"
+            android:buttonTint="#F3F2EC"
             android:text="@string/today"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -48,37 +49,41 @@
             android:layout_marginStart="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="250dp"
-            android:background="#FFC107"
+            android:background="#FF9800"
+            android:buttonTint="#F3F2EC"
             android:text="@string/week"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/todayRadioButton" />
 
         <RadioButton
-            android:id="@+id/yearRadioButton"
+            android:id="@+id/monthRadioButton"
             android:layout_width="105dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="250dp"
-            android:background="#FFC107"
+            android:background="#FF9800"
+            android:buttonTint="#F3F2EC"
             android:text="@string/month"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/weekRadioButton" />
 
         <RadioButton
-            android:id="@+id/radioButton5"
+            android:id="@+id/allRadioButton"
             android:layout_width="105dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="250dp"
-            android:background="#FFC107"
-            android:text="@string/year"
+            android:background="#FF9800"
+            android:buttonTint="#F3F2EC"
+            android:checked="true"
+            android:text="@string/all"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/yearRadioButton"
+            app:layout_constraintTop_toBottomOf="@+id/monthRadioButton"
             tools:layout_editor_absoluteX="46dp"
             tools:layout_editor_absoluteY="261dp" />
 
@@ -86,11 +91,13 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleView"
-        android:layout_width="341dp"
-        android:layout_height="300dp"
+        android:layout_width="316dp"
+        android:layout_height="356dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="125dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="25dp"
+        android:layout_marginBottom="85dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
@@ -99,9 +106,9 @@
         android:id="@+id/settingsButton"
         android:layout_width="115dp"
         android:layout_height="60dp"
-        android:layout_marginStart="50dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
-        android:background="#3F51B5"
+        android:background="#FFC107"
         android:text="@string/settings"
         app:layout_constraintStart_toEndOf="@+id/radioGroup"
         app:layout_constraintTop_toBottomOf="@+id/addNew_Button" />

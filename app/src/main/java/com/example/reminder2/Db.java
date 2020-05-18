@@ -67,6 +67,7 @@ public class Db extends SQLiteOpenHelper {
             note.setTitle(cursor.getString(1));
             note.setDetail(cursor.getString(2));
             note.setCategory(cursor.getString(3));
+            note.setTime(cal);
             note.setIsDone(Boolean.parseBoolean(cursor.getString(5)));
             notes.add(note);
         }
