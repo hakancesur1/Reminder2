@@ -1,5 +1,6 @@
 package com.example.reminder2;
 
+import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -70,7 +71,7 @@ public class Notes {
     }
 
     public static String convertGregorianToDate(Calendar time){
-        SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        SimpleDateFormat fmt = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         fmt.setCalendar(time);
 
         String dateFormatted = fmt.format(time.getTime());
@@ -111,6 +112,62 @@ public class Notes {
                 return reminderNotesNew;
         }
         return reminderNotes;
+    }
+
+    public static ArrayList<Integer> getRemindersDetails(ArrayList<Notes> reminderNotes){
+        ArrayList<Notes> reminderNotesNew = new ArrayList<>();
+        Calendar today = Calendar.getInstance();
+        double dayConverter = 24 * 60 * 60 * 1000;
+        double diff;
+        int day=0,week=0,month=0,all=0;
+        int dayDone=0,weekDone=0,monthDone=0,allDone=0;
+        ArrayList<Integer> list=new ArrayList<Integer>();
+
+                 //today's reminders
+                for(Notes reminderNote : reminderNotes){
+                    diff = (reminderNote.getTime().getTimeInMillis() - today.getTimeInMillis()) / dayConverter;
+                    if(diff >= 0 && diff < 1){
+                        if(reminderNote.getIsDone()){
+                            dayDone++;
+                        }
+                        day++;}
+                }
+
+                //week's reminders
+                for(Notes reminderNote : reminderNotes){
+                    diff = (reminderNote.getTime().getTimeInMillis() - today.getTimeInMillis()) / dayConverter;
+                    if(diff >= 0 && diff < 7){
+                        if(reminderNote.getIsDone()){
+                            weekDone++;
+                        }
+                        week++;}
+                }
+
+                //month's reminders
+                for(Notes reminderNote : reminderNotes) {
+                    diff = (reminderNote.getTime().getTimeInMillis() - today.getTimeInMillis()) / dayConverter;
+                    if (diff >= 0 && diff < 30) {
+                        if(reminderNote.getIsDone()){
+                            monthDone++;
+                        }
+                        month++;}
+                }
+                for(Notes reminderNote : reminderNotes){
+                    if(reminderNote.getIsDone()){
+                        allDone++;
+                    }
+                }
+
+        list.add(day);
+        list.add(week);
+        list.add(month);
+        list.add(reminderNotes.size());
+        list.add(dayDone);
+        list.add(weekDone);
+        list.add(monthDone);
+        list.add(allDone);
+
+        return list;
     }
 
 }

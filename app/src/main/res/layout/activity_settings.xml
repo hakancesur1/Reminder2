@@ -5,35 +5,118 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#141E57"
+    android:id="@+id/constraitLayoutOne"
     tools:context=".Settings">
 
     <Button
         android:id="@+id/notificationButton"
-        android:layout_width="148dp"
-        android:layout_height="82dp"
-        android:layout_marginStart="125dp"
-        android:layout_marginTop="125dp"
-        android:text="@string/notification"
+        android:layout_width="227dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="50dp"
+        android:background="#FFC107"
+        android:text="@string/Notification_Ringaton"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/vibrationButton"
-        android:layout_width="148dp"
-        android:layout_height="82dp"
+        android:id="@+id/saveButton"
+        android:layout_width="163dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="125dp"
+        android:background="#FFC107"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/screenModeSwitch" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="163dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginBottom="125dp"
+        android:background="#FFC107"
+        android:text="@string/back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/screenModeSwitch" />
+
+    <Switch
+        android:id="@+id/screenModeSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="125dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="175dp"
+        android:shadowColor="#FFFFFF"
+        android:text="@string/screen_mode"
+        android:textColor="#EF2F2F"
+        android:textColorHint="#ED2D2D"
+        android:textColorLink="#DD1F1F"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/remindTimeEditText" />
+
+    <EditText
+        android:id="@+id/snoozeEditText"
+        android:layout_width="193dp"
+        android:layout_height="39dp"
         android:layout_marginTop="50dp"
-        android:text="@string/vibration"
+        android:layout_marginEnd="15dp"
+        android:background="#FFC107"
+        android:ems="10"
+        android:hint="@string/snooze_options"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/notificationButton" />
+
+    <EditText
+        android:id="@+id/remindTimeEditText"
+        android:layout_width="193dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="15dp"
+        android:background="#FFC107"
+        android:ems="10"
+        android:hint="@string/remind_time"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/snoozeEditText" />
+
+    <TextView
+        android:id="@+id/snoozeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="15dp"
+        android:text="@string/snooze_options"
+        android:textColor="#EF2F2F"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toStartOf="@+id/snoozeEditText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/notificationButton" />
 
-    <Button
-        android:id="@+id/timerButton"
-        android:layout_width="148dp"
-        android:layout_height="82dp"
-        android:layout_marginStart="125dp"
-        android:layout_marginTop="50dp"
-        android:text="@string/timer"
+    <TextView
+        android:id="@+id/remindTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="15dp"
+        android:text="@string/remind_time"
+        android:textColor="#EF2F2F"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toStartOf="@+id/remindTimeEditText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vibrationButton" />
+        app:layout_constraintTop_toBottomOf="@+id/snoozeTextView" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

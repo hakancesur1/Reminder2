@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraitLayoutThree"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#141E57"
@@ -9,13 +10,14 @@
 
     <EditText
         android:id="@+id/titleEditText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="227dp"
+        android:layout_height="50dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="50dp"
-        android:layout_marginEnd="75dp"
+        android:layout_marginEnd="35dp"
         android:ems="10"
         android:hint="@string/title"
+        android:background="#BBC3F4"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,8 +29,9 @@
         android:layout_height="87dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="75dp"
+        android:layout_marginEnd="35dp"
         android:ems="10"
+        android:background="#BBC3F4"
         android:gravity="start|top"
         android:hint="@string/details"
         android:inputType="textMultiLine"
@@ -47,6 +50,7 @@
         android:checked="false"
         android:hint="@string/category"
         android:text="@string/done"
+        android:background="#FFC107"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/shareButton"
@@ -54,27 +58,29 @@
 
     <Button
         android:id="@+id/saveButton"
-        android:layout_width="448dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="163dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="125dp"
+        android:background="#FFC107"
         android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.513"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dateTimeTextView" />
 
     <Button
         android:id="@+id/backButton"
-        android:layout_width="448dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="30dp"
+        android:layout_width="163dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="125dp"
+        android:background="#FFC107"
         android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/saveButton" />
+        app:layout_constraintTop_toBottomOf="@+id/dateTimeTextView" />
 
     <Button
         android:id="@+id/dateButton"
@@ -84,6 +90,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="225dp"
         android:text="@string/date"
+        android:background="#FFC107"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.445"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,24 +103,27 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="50dp"
         android:text="@string/share"
+        android:background="#FFC107"
         app:layout_constraintStart_toEndOf="@+id/dateButton"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
 
     <TextView
         android:id="@+id/dateTimeTextView"
-        android:layout_width="109dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="40dp"
+        android:layout_width="134dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="15dp"
+        android:background="#BBC3F4"
         android:clickable="false"
         android:text="@string/date_time"
+        android:textStyle="bold|italic"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dateButton" />
 
     <RadioGroup
         android:id="@+id/radioGroup2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="123dp"
+        android:layout_height="123dp"
         android:layout_marginStart="140dp"
         android:layout_marginTop="15dp"
         android:layout_marginEnd="160dp"
@@ -125,38 +135,40 @@
 
         <RadioButton
             android:id="@+id/birthDayRadioButton"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#FF9800"
             android:text="@string/birthday"
             tools:layout_editor_absoluteX="50dp"
             tools:layout_editor_absoluteY="247dp" />
 
         <RadioButton
             android:id="@+id/activityRadioButton"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#FF9800"
             android:text="@string/activity"
             tools:layout_editor_absoluteX="50dp"
             tools:layout_editor_absoluteY="292dp" />
 
         <RadioButton
             android:id="@+id/noticeRadioButton"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#FF9800"
             android:text="@string/notice"
             tools:layout_editor_absoluteX="222dp"
             tools:layout_editor_absoluteY="247dp" />
 
         <RadioButton
             android:id="@+id/meetingRadioButton"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#FF9800"
             android:text="@string/meeting"
             tools:layout_editor_absoluteX="221dp"
             tools:layout_editor_absoluteY="298dp" />
     </RadioGroup>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

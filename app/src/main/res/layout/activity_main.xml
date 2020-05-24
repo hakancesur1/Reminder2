@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#141E57"
+    android:id="@+id/constraitLayoutTwo"
     tools:context=".MainActivity">
 
     <Button
@@ -12,7 +13,7 @@
         android:layout_width="115dp"
         android:layout_height="60dp"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="15dp"
         android:background="#FFC107"
         android:text="@string/add_new"
         app:layout_constraintStart_toEndOf="@+id/radioGroup"
@@ -20,10 +21,10 @@
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="201dp"
-        android:layout_height="198dp"
+        android:layout_width="196dp"
+        android:layout_height="155dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:background="#141E57"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -70,33 +71,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/weekRadioButton" />
 
-        <RadioButton
-            android:id="@+id/allRadioButton"
-            android:layout_width="105dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="250dp"
-            android:background="#FF9800"
-            android:buttonTint="#F3F2EC"
-            android:checked="true"
-            android:text="@string/all"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/monthRadioButton"
-            tools:layout_editor_absoluteX="46dp"
-            tools:layout_editor_absoluteY="261dp" />
-
     </RadioGroup>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleView"
-        android:layout_width="316dp"
-        android:layout_height="356dp"
+        android:layout_width="304dp"
+        android:layout_height="305dp"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="25dp"
-        android:layout_marginBottom="85dp"
+        android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -112,6 +96,25 @@
         android:text="@string/settings"
         app:layout_constraintStart_toEndOf="@+id/radioGroup"
         app:layout_constraintTop_toBottomOf="@+id/addNew_Button" />
+
+    <TextView
+        android:id="@+id/scrollingtext"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="12dp"
+        android:background="#D0D0D0"
+        android:ellipsize="marquee"
+
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recycleView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

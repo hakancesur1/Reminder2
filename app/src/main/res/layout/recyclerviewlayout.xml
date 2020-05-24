@@ -13,7 +13,7 @@
     <LinearLayout
         android:id="@+id/parent"
         android:layout_width="407dp"
-        android:layout_height="130dp"
+        android:layout_height="110dp"
         android:background="@android:color/white"
         android:orientation="horizontal">
 
@@ -39,30 +39,30 @@
                     android:id="@+id/rTitleTextView"
                     android:layout_width="237dp"
                     android:layout_height="31dp"
-                    android:layout_marginLeft="3dp"
-                    android:layout_marginTop="9dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
                     android:text="@string/rTitle"
-                    android:textSize="15dp"
+                    android:textSize="18dp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/rDetailTextView"
                     android:layout_width="237dp"
-                    android:layout_height="31dp"
-                    android:layout_marginLeft="3dp"
-                    android:layout_marginTop="9dp"
-                    android:textSize="15dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:textSize="16dp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/rDateTextView"
-                    android:layout_width="237dp"
-                    android:layout_height="27dp"
-                    android:layout_marginLeft="3dp"
-                    android:layout_marginTop="3dp"
+                    android:layout_width="232dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
                     android:text="@string/rDate"
-                    android:textSize="12dp"
-                    android:textStyle="italic" />
+                    android:textSize="16dp"
+                    android:textStyle="bold|italic" />
 
 
             </LinearLayout>

@@ -1,33 +1,39 @@
 <resources>
-    <string name="app_name">Reminder</string>
-    <string name="add_new">Add New Event</string>
-    <string name="settings">Settings</string>
-    <string name="today">Today</string>
-    <string name="week">Week</string>
-    <string name="month">Month</string>
-    <string name="all">All</string>
-    <string name="date">Date</string>
-    <string name="share">Share</string>
+    <string name="app_name">Hatırlatıcı</string>
+    <string name="add_new">Yeni Ekle</string>
+    <string name="settings">Ayarlar</string>
+    <string name="today">Bugün</string>
+    <string name="week">Haftalık</string>
+    <string name="month">Aylık</string>
+    <string name="all">Tümü</string>
+    <string name="date">Tarih</string>
+    <string name="share">Paylaş</string>
 
-    <string name="rTitle">Title</string>
-    <string name="rDate">Date</string>
+    <string name="rTitle">Başlık</string>
+    <string name="rDate">Tarih</string>
 
-    <string name="title">Title</string>
-    <string name="details">Details</string>
-    <string name="category">Category</string>
-    <string name="done">Done</string>
-    <string name="save">Save</string>
-    <string name="back">Back</string>
-    <string name="date_time">Date And Time</string>
-    <string name="birthday">Birthday</string>
-    <string name="activity">Activity</string>
-    <string name="notice">Notice</string>
-    <string name="meeting">Meeting</string>
+    <string name="title">Başlık</string>
+    <string name="details">Detay</string>
+    <string name="category">Kategori</string>
+    <string name="done">Bitti</string>
+    <string name="save">Kaydet</string>
+    <string name="back">Geri</string>
+    <string name="date_time">Tarih</string>
+    <string name="birthday">Doğumgünü</string>
+    <string name="activity">Aktivite</string>
+    <string name="notice">Bildirim</string>
+    <string name="meeting">Toplantı</string>
 
-    <string name="notification">Notification</string>
-    <string name="vibration">Vibration</string>
-    <string name="timer">Timer</string>
+    <string name="Notification_Ringaton">Bildirim Sesi Seç</string>
+    <string name="timer">Zamanlayıcı</string>
     <string name="title_activity_settings">Settings</string>
+
+    <string name="all_list">Tüm Liste</string>
+
+    <string name="snooze_options">Erteleme Süresi (dk)</string>
+    <string name="remind_time">Hatırlatma Zamanı (dk)</string>
+    <string name="screen_mode">Ekran Modu</string>
+
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>

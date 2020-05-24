@@ -58,21 +58,114 @@ public class Db extends SQLiteOpenHelper {
                 null, null, null, null, null);
         while (cursor.moveToNext()) {
             Notes note = new Notes();
-
             Calendar cal = Calendar.getInstance();
             long reminderDate = cursor.getLong(4);
             cal.setTimeInMillis(reminderDate);
+
+            boolean isDone=false;
+            if(cursor.getString(5).equalsIgnoreCase("1")) {
+                isDone=true;
+            }
 
             note.setId(cursor.getInt(0));
             note.setTitle(cursor.getString(1));
             note.setDetail(cursor.getString(2));
             note.setCategory(cursor.getString(3));
             note.setTime(cal);
-            note.setIsDone(Boolean.parseBoolean(cursor.getString(5)));
+            note.setIsDone(isDone);
             notes.add(note);
         }
 
         return notes;
+    }
+
+    public void deleteReminderNote(Notes reminderNotes) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.delete(TABLE_REMINDERS,"id = ?",
+                new String[] { String.valueOf(reminderNotes.getId()) });
+
+        db.close();
+    }
+
+    public Notes getNoteByID(int id){
+
+        Notes notes = new Notes();
+        String selectQuery = "SELECT * FROM " + TABLE_REMINDERS+ " WHERE id = " + id;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        cursor.moveToFirst();
+
+        if(cursor.getCount() > 0){
+
+            Calendar cal = Calendar.getInstance();
+            long reminderDate = cursor.getLong(3);
+            cal.setTimeInMillis(reminderDate);
+
+            notes.setId(cursor.getInt(0));
+            notes.setTitle( cursor.getString(1));
+            notes.setDetail( cursor.getString(2));
+            notes.setCategory( cursor.getString(4));
+            notes.setTime(cal);
+            String done;
+            done=cursor.getString(5);
+            if(done.equalsIgnoreCase("0"))
+                notes.setIsDone(false);
+            else if(done.equalsIgnoreCase("1"))
+                notes.setIsDone(true);
+        }
+        cursor.close();
+        db.close();
+        // return kitap
+        return notes;
+    }
+
+    public int getNoteByTime(long time){
+
+        Notes notes = new Notes();
+        String selectQuery = "SELECT * FROM " + TABLE_REMINDERS+ " WHERE time = " + time;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        cursor.moveToFirst();
+
+        if(cursor.getCount() > 0){
+
+            Calendar cal = Calendar.getInstance();
+            long reminderDate = cursor.getLong(3);
+            cal.setTimeInMillis(reminderDate);
+
+            notes.setId(cursor.getInt(0));
+            notes.setTitle( cursor.getString(1));
+            notes.setDetail( cursor.getString(2));
+            notes.setCategory( cursor.getString(4));
+            notes.setTime(cal);
+            String done;
+            done=cursor.getString(5);
+            if(done.equalsIgnoreCase("0"))
+                notes.setIsDone(false);
+            else if(done.equalsIgnoreCase("1"))
+                notes.setIsDone(true);
+        }
+        else
+            return -1;
+        cursor.close();
+        db.close();
+        // return kitap
+        return notes.getId();
+    }
+
+    public void updateReminderNote(int id,String title,String detail,long time,String category,int isDone){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String strSQL = "UPDATE " +TABLE_REMINDERS + " SET " +
+                " title = '" + title + "', detail = '" + detail + "', time = " + time + ", category = '"+ category + "', isDone = " + isDone + " WHERE id = "+ id;
+
+        db.execSQL(strSQL);
+
     }
 
     @Override
